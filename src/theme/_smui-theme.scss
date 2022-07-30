@@ -1,0 +1,216 @@
+// material libraries
+@use "@material/theme/color-palette";
+
+// custom defined colors
+@use "@material/theme/index" as theme with ($primary: #333333,
+  $surface: #fff,
+  $background: #fff,
+  $error: color-palette.$red-900);
+
+@use "@material/typography/mdc-typography";
+
+@use "@material/elevation/mdc-elevation";
+
+@use '@material/linear-progress/index' as linear-progress;
+
+@use "@material/shape";
+
+// font custom applicati agli stili material 
+[class^="mdc-typography--headline"] {
+  font-family: 'Saira Extra Condensed', sans-serif !important;
+  color: theme.$primary;
+}
+
+[class^="mdc-typography--body"],
+[class^="mdc-typography--button"],
+[class^="mdc-typography--subtitle"] {
+  font-family: 'Saira Semi Condensed', sans-serif !important;
+}
+
+// dimensioni dei testi responsive 
+.mdc-typography--headline1 {
+  font-size: 4.5vw;
+}
+
+.mdc-typography--headline2 {
+  font-size: 3.6vw;
+}
+
+.mdc-typography--headline3 {
+  font-size: 2.8vw;
+}
+
+.mdc-typography--headline4 {
+  font-size: 2.1vw;
+  line-height: 3vw;
+}
+
+.mdc-typography--headline6 {
+  font-size: 1.2vw;
+}
+
+.mdc-typography--body1 {
+  font-size: 1.3vw;
+  line-height: 1.6vw;
+}
+
+.mdc-typography--body2 {
+  font-size: 1.1vw;
+  line-height: 1.5vw;
+}
+
+.mdc-typography--button {
+  font-size: 1.1vw;
+  line-height: 1.5vw;
+}
+
+// properties globali per elementi e classi
+html,
+body {
+  background-color: theme.$surface;
+  color: theme.$on-surface;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+div[id^="content-"] {
+  justify-content: center;
+  transition: all 0.5s;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.transparent {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.mirrored {
+  transform: rotateY(180deg);
+}
+
+.highlight {
+  font-weight: bolder;
+  color: theme.$primary;
+  text-transform: uppercase;
+
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.primary {
+  color: theme.$primary;
+}
+
+.secondary {
+  color: theme.$secondary;
+}
+
+.error {
+  color: theme.$error;
+}
+
+.flex-row,
+.flex-row-4,
+.flex-row-2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-row-2 {
+  gap: 2vw;
+}
+
+.flex-row-4 {
+  gap: 4vw;
+}
+
+.flex-column,
+.flex-column-2,
+.flex-column-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-column-2 {
+  gap: 2vw;
+}
+
+.flex-column-4 {
+  gap: 4vw;
+}
+
+.left-align {
+  text-align: left;
+  align-items: start;
+  margin-left: 6vw;
+}
+
+.right-align {
+  text-align: right;
+  align-items: end;
+  margin-right: 6vw;
+}
+
+
+// nuovo stile di tutti i componenti globali per mobile 
+@media screen and (max-width: 600px) {
+
+  // dimensioni dei testi per mobile 
+  .mdc-typography--headline1 {
+    font-size: 10vw;
+    line-height: 10vw;
+  }
+
+  .mdc-typography--headline2 {
+    font-size: 3.6vw;
+  }
+
+  .mdc-typography--headline3 {
+    font-size: 7vw;
+    line-height: 8vw;
+  }
+
+  .mdc-typography--headline4 {
+    font-size: 6.5vw;
+    line-height: 7vw;
+  }
+
+  .mdc-typography--headline6 {
+    font-size: 4.5vw;
+  }
+
+  .mdc-typography--body1 {
+    font-size: 5vw;
+    line-height: 6vw;
+  }
+
+  .mdc-typography--body2 {
+    font-size: 5vw;
+    line-height: 6vw;
+  }
+
+  .mdc-typography--button {
+    font-size: 4.5vw;
+    line-height: 6vw;
+  }
+}
